@@ -1,0 +1,128 @@
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #a3c7f0;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+  
+    .title,
+    .sub-title,
+    .details,
+    .event-details {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    .sub-title {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  
+    .details {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  
+    .details span {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  
+    .event-details {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+  
+    .event-details span {
+      display: block;
+    }
+  
+    .name-highlight {
+      color: navy;
+    }
+  
+    .map-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+  
+      iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+      }
+    }
+  }
+  
+  // -------------------
+  // INI DI LUAR .centered-content
+  // -------------------
+  .flower {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    animation: float 10s infinite ease-in-out, fadeIn 1s forwards;
+    transform-origin: center;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .petal {
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(to bottom, #76b5c5, #4d91a0); // Biru bunga
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transform-origin: bottom center;
+  }
+  
+  .petal-1 { transform: rotate(0deg); }
+  .petal-2 { transform: rotate(90deg); }
+  .petal-3 { transform: rotate(180deg); }
+  .petal-4 { transform: rotate(270deg); }
+  
+  .center {
+    width: 20px;
+    height: 20px;
+    background-color: #ffd700; // kuning tengah
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .flower-1 { top: 20px; left: 30px; animation-delay: 0s; }
+  .flower-2 { top: 70px; right: 40px; animation-delay: 2s; }
+  .flower-3 { bottom: 30px; left: 50px; animation-delay: 4s; }
+  .flower-4 { bottom: 70px; right: 70px; animation-delay: 6s; }
+  
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  
