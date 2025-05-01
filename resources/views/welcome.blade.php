@@ -10,31 +10,42 @@
     <!-- Load SCSS dari Vite -->
     @vite(['resources/scss/app.scss'])
 </head>
-<body class="welcome d-flex flex-column align-items-center justify-content-center text-center">
+<body class="welcome">
 
-    <div class="fade-in">
-        <h1 class="title">Undangan Pernikahan</h1>
-        <h2 class="names m-3">Kevin & Nisa</h2>
-    </div>
+    <div class="full-wrapper d-flex flex-column justify-content-center align-items-center text-center">
+      
+        <div class="background-image-top fade-in-delay">
+            <img src="{{ asset('assets/bluebunga.png') }}" alt="Example" class="img-fluid">
+          </div>
 
-    <div class="wedding-image fade-in-delay">
-        <img src="{{ asset('assets/example.jpg') }}" alt="Example" class="img-fluid rounded-4 shadow">
-    </div>    
-
-    <div class="invitation-text fade-in-delay-2">
-        <p>Teriring rasa syukur dan mengharap ridho <br> Allah Subhanahu Wa Ta'ala,</p>
-        <p>Kami mengundang Bapak/Ibu/Sahabat <br> untuk hadir pada acara pernikahan kami.</p>
-    </div>
-
-    <div class="fade-in-delay-3 m-3">
+          
+      <div class="fade-in pt-5 mt-3">
+        <h1 class="title pt-5">Undangan Pernikahan</h1>
+        <h2 class="names m-3 pt-3 justify-content-center">
+            <span class="name-kevin text-center">Kevin</span>
+            <span class="and-separator"> <br>&nbsp;&amp;&nbsp;</span>
+            <br>
+            <span class="name-nisa text-center">Nisa</span>
+        </h2>                  
+      </div>
+  
+      <div class="invitation-text fade-in-delay-2">
+        <p class="main-text">Kami mengundang Bapak/Ibu/Sahabat</p>
+        <p class="main-text">untuk hadir pada acara pernikahan kami.</p>
+      </div>      
+  
+      <div class="fade-in-delay-3 m-3">
         <a class="btn btn-primary px-4 py-2 fs-5 rounded-pill shadow" href="{{ route('wedding') }}">
-            Buka Undangan
+          Buka Undangan
         </a>
+      </div>
+  
     </div>
-
+  
     <div class="background-image fade-in-delay pt-3">
-        <img src="{{ asset('assets/blueflower5.png') }}" alt="Example" class="img-fluid">
+      <img src="{{ asset('assets/blueflower5.png') }}" alt="Example" class="img-fluid">
     </div>
-
-</body>
+  
+  </body>
+  
 </html>

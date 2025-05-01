@@ -5,6 +5,16 @@
     background: linear-gradient(to top, #d0f0ff, #eaf9ff, #ffffff);
     color: #224066;
 
+    .full-wrapper {
+        min-height: 100vh;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+
     .title {
         font-family: 'Great Vibes', cursive;
         font-weight: bold;
@@ -17,11 +27,104 @@
 
     .names {
         font-family: 'Great Vibes', cursive;
-        font-size: 2.8rem;
+        font-size: 3.5rem;
+        font-weight: bolder;
         color: #2196f3;
-        animation: slideInUp 1.2s ease forwards;
-        text-shadow: 0 0 8px rgba(33, 150, 243, 0.2);
+        position: relative;
+        animation: slideInUp 1.2s ease-out forwards;
+        text-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+      
+        background: rgba(33, 150, 243, 0.15);
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;  /* Horizontal center */
+        align-items: center;      /* Vertical center */
+        text-align: center;
+        padding: 1rem;            /* Memberikan sedikit ruang */
+        box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+    
+        .name-kevin, .name-nisa {
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 0;  /* Menghindari margin tambahan */
+            
+            &:hover {
+                transform: scale(1.1) rotate(-2deg);
+                background: rgba(33, 150, 243, 0.4);
+                box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+            }
+        }
+        
+        .and-separator {
+            font-size: 2rem;
+            color: #4caf50;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+    
+        /* Animasi masuk dari kiri dan kanan */
+        .name-kevin {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+    
+        .name-nisa {
+            animation: slideInRight 1s ease-out forwards;
+        }
+    
+        @keyframes slideInUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slideInRight {
+            from {
+                transform: translateX(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
     }
+    
+      
+    
+      .background-image-top {
+        position: absolute; /* Gambar diletakkan di posisi absolute */
+        top: 0; /* Menempatkan gambar di bagian atas halaman */
+        left: 0; /* Menempatkan gambar di sisi kiri */
+        width: 100%; /* Mengisi seluruh lebar layar */
+        height: 100%; /* Mengisi seluruh tinggi layar */
+        z-index: -1; /* Menempatkan gambar di bawah elemen lainnya */
+        background-image: url('/assets/bluebunga.png');
+        background-size: cover; /* Agar gambar memenuhi layar tanpa terdistorsi */
+        background-position: top center; /* Menempatkan gambar di bagian atas */
+        opacity: 0.6; /* Memberikan transparansi agar tidak menutupi konten */
+        pointer-events: none; /* Gambar tidak menghalangi interaksi pengguna */
+    }
+    
 
     .wedding-image {
         margin: 2rem 0;
@@ -100,13 +203,31 @@
     
 
     .invitation-text {
-        font-size: 1.2rem;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.25rem;
         color: #1e3a5f;
         animation: fadeIn 2s ease forwards;
-        padding: 1rem 2rem;
-        border-radius: 1rem;
-        backdrop-filter: blur(4px);
-    }
+        padding: 2rem;
+        text-align: center;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+        
+        .greeting {
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: #004d80;
+          margin-bottom: 1rem;
+        }
+      
+        .invitation {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: #0d3b5d;
+          margin-bottom: 1.5rem;
+        }
+      }
+      
 
     a.btn {
         background-color: #2196f3;
@@ -191,175 +312,289 @@
 }
 
 .centered-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #a3c7f0;
-    position: relative;
-    overflow: hidden;
-    padding: 2rem;
-  
-    .title,
-    .sub-title,
-    .details,
-    .event-details {
-      text-align: center;
-      width: 100%;
-    }
-  
+    width: 100%; /* Pastikan lebar 100% */
+    max-width: 100vw; /* Membatasi lebar maksimal hingga layar penuh */
+    margin: 0 auto; /* Mengatur agar berada di tengah */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
     .title {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-  
-    .sub-title {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-  
-    .details {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-  
-    .details span {
-      display: block;
-      margin-top: 0.5rem;
-    }
-  
-    .event-details {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-    }
-  
-    .event-details span {
-      display: block;
-    }
-  
-    .name-highlight {
-      color: navy;
-    }
-  
-    .map-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-  
-      iframe {
-        width: 100%;
-        height: 450px;
-        border: 0;
-      }
-    }
-  }
-  
-  // -------------------
-  // INI DI LUAR .centered-content
-  // -------------------
-  .flower {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    animation: float 10s infinite ease-in-out, fadeIn 1s forwards;
-    transform-origin: center;
-    z-index: 0;
-    opacity: 0;
-  }
-
-  .petal {
-    width: 20px;
-    height: 40px;
-    background: linear-gradient(to bottom, #76b5c5, #4d91a0); // Biru bunga
-    border-radius: 50% 50% 0 0;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    transform-origin: bottom center;
-  }
-  
-  .petal-1 { transform: rotate(0deg); }
-  .petal-2 { transform: rotate(90deg); }
-  .petal-3 { transform: rotate(180deg); }
-  .petal-4 { transform: rotate(270deg); }
-  
-  .center {
-    width: 20px;
-    height: 20px;
-    background-color: #ffd700; // kuning tengah
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .flower-1 { top: 20px; left: 30px; animation-delay: 0s; }
-  .flower-2 { top: 70px; right: 40px; animation-delay: 2s; }
-  .flower-3 { bottom: 30px; left: 50px; animation-delay: 4s; }
-  .flower-4 { bottom: 70px; right: 70px; animation-delay: 6s; }
-  
-  @keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(15deg); }
-    100% { transform: translateY(0) rotate(0deg); }
-  }
-  
-
-.countdown-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    overflow-x: hidden;
-    position: relative;
-
-    .background-image {
-        object-fit: cover;
-        max-height: 600px;
-        height: 100%;
-      }
-      
-      .countdown-timer {
-        top: 1rem;
-        left: 1rem;
-        gap: 2rem;
-      }
-      
-      .portrait-image {
-        top: 120px;
-        left: 1rem;
-        width: 300px;
-        height: 450px;
-      
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        text-align: center;
+        font-family: 'Georgia', serif;
+        color: #333;
+        padding: 20px 15px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        max-width: 480px;
+        margin: 15px auto;
+    
+        h3 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #3f51b5;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.8px;
         }
-      
-        box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7);
-      }
-      
-      .countdown-date {
-        bottom: 1rem;
-        left: 1rem;
+    
+        p {
+            font-size: 1rem;
+            color: #757575;
+            font-style: italic;
+        }
+    }
+    
+    
+
+    .couple-details {
+        .card-couple {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            animation: fadeSlideIn 1s ease forwards;  // Pastikan animasi ditambahkan di sini
+            
+            &:hover {
+                transform: scale(1.015) rotateZ(0.5deg);
+                box-shadow: 0 10px 30px rgba(0, 128, 255, 0.25);
+                border-color: rgba(0, 128, 255, 0.3);
+            }
+        }
+    
+        // Animasi Fade + Slide
+        @keyframes fadeSlideIn {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        .animate-fade-slide {
+            animation: fadeSlideIn 0.8s ease forwards !important;  // Gunakan !important untuk memastikan animasi diterapkan
+        }
+    
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+    
+        .name-highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2196f3;
+            text-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+        }
+    
+        .parents {
+            font-size: 0.9rem;
+        }
+    
+        .address {
+            font-size: 0.8rem;
+        }
+    
+        .with-divider {
+            span {
+                font-size: 0.9rem;
+            }
+    
+            .divider {
+                width: 40px;
+                height: 2px;
+                background-color: #2196f3;
+                border: none;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .event-details {
+        background-size: cover;  // Ensures the background image covers the whole area
+        border-radius: 8px;  // Tighter corners for a more modern feel
+        text-align: center;
+        max-width: 350px;  // Reduced width for a more compact feel
+        margin: 15px auto;  // Reduced margin for closer positioning
+        padding: 10px 16px;  // Smaller padding for compactness
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+        animation: fadeInUp 0.6s ease-out;  // Shorter animation for quicker visibility
+        
+        .title-prim {
+            font-size: 18px;  // Reduced font size for the title
+            font-weight: 600;
+            color: #3f51b5;
+            text-transform: uppercase;
+            letter-spacing: 1px;  // Reduced letter-spacing for a more compact look
+            margin-bottom: 8px;  // Smaller margin below the title
+        }
+    
+        .title-sec {
+            font-size: 18px;  // Smaller font size for date and location
+            color: #424242;
+            font-weight: 400;
+            margin-bottom: 6px;  // Reduced space between date and location
+        }
+    
+        .title-sec:last-child {
+            color: #607d8b;
+            font-style: italic;
+            margin-bottom: 0;  // No margin after the last item for a more compact block
+        }
+    
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);  // Slightly less movement for a tighter effect
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    
+
+    .map-container iframe {
+        border-radius: 10px;
+        width: 100%; /* Pastikan map menggunakan lebar penuh */
+    }
+
+    .btn-primary {
+        background-color: #2196f3;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
         font-size: 1rem;
-      }
-      
-      .tracking {
-        letter-spacing: 0.2em;
-      }
-  }
+        box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    }
+
+    .btn-primary:hover {
+        background-color: #1976d2;
+        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.5);
+    }
+    
+    .reception-invitation {
+        background: #fff;
+        padding: 30px;
+        max-width: 500px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Garamond', serif;
+    
+        .reception-header {
+            text-align: center;
+            .reception-title {
+                font-size: 1.2rem;
+                color: #3f51b5;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+    
+            .main-title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: #3f51b5;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+            }
+    
+            .sub-title {
+                font-size: 1rem;
+                color: #616161;
+                font-weight: 400;
+            }
+        }
+    
+        .reception-details {
+            margin-top: 20px;
+            .event-info {
+                font-size: 1rem;
+                color: #424242;
+                margin-bottom: 8px;
+                .event-title {
+                    font-weight: 600;
+                    color: #3f51b5;
+                }
+            }
+        }
+    
+        .thank-you {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1rem;
+            font-style: italic;
+            color: #757575;
+        }
+    
+        .families {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1rem;
+            color: #424242;
+            font-weight: 600;
+        }
+    }
+    
+    .map-container {
+        .map-iframe {
+            border-radius: 15px;  // Rounded corners for the map
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  // Soft shadow to make the map stand out
+        }
+    
+        a {
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #2196f3;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);  // Subtle glow effect
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            
+            &:hover {
+                background-color: #1976d2;  // Darker blue on hover
+                box-shadow: 0 6px 25px rgba(33, 150, 243, 0.4);  // Glow effect on hover
+                transform: translateY(-4px);  // Slight lift effect
+            }
+    
+            &:focus {
+                outline: none;  // Remove focus outline
+                border: 2px solid #1976d2;  // Blue border when focused
+            }
+        }
+    
+        .hover-translate {
+            &:hover {
+                transform: scale(1.05);  // Slight zoom effect for interaction
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+  
   
   
