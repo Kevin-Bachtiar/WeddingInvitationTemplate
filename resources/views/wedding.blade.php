@@ -11,36 +11,6 @@
 </head>
 <body>
 
-<!-- Bunga hiasan -->
-<div class="flower flower-1">
-    <div class="petal petal-1"></div>
-    <div class="petal petal-2"></div>
-    <div class="petal petal-3"></div>
-    <div class="petal petal-4"></div>
-    <div class="center"></div>
-</div>
-<div class="flower flower-2">
-    <div class="petal petal-1"></div>
-    <div class="petal petal-2"></div>
-    <div class="petal petal-3"></div>
-    <div class="petal petal-4"></div>
-    <div class="center"></div>
-</div>
-<div class="flower flower-3">
-    <div class="petal petal-1"></div>
-    <div class="petal petal-2"></div>
-    <div class="petal petal-3"></div>
-    <div class="petal petal-4"></div>
-    <div class="center"></div>
-</div>
-<div class="flower flower-4">
-    <div class="petal petal-1"></div>
-    <div class="petal petal-2"></div>
-    <div class="petal petal-3"></div>
-    <div class="petal petal-4"></div>
-    <div class="center"></div>
-</div>
-
 <div class="d-flex justify-content-center align-items-center w-100 h-100">
     <div class="centered-content">
         <!-- Main Title -->

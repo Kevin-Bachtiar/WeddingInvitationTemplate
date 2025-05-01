@@ -26,10 +26,14 @@
         <p>Kami mengundang Bapak/Ibu/Sahabat <br> untuk hadir pada acara pernikahan kami.</p>
     </div>
 
-    <div class="fade-in-delay-3 m-5">
+    <div class="fade-in-delay-3 m-3">
         <a class="btn btn-primary px-4 py-2 fs-5 rounded-pill shadow" href="{{ route('wedding') }}">
             Buka Undangan
         </a>
+    </div>
+
+    <div class="background-image fade-in-delay pt-3">
+        <img src="{{ asset('assets/blueflower5.png') }}" alt="Example" class="img-fluid">
     </div>
 
 </body>
