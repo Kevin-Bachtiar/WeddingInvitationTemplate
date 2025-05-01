@@ -11,6 +11,43 @@
 </head>
 <body>
 
+    <div class="countdown-body">
+
+        {{-- Background image --}}
+        <img src="https://storage.googleapis.com/a1aa/image/f58f3623-2ba1-49fc-1ac5-2cee27b6d2e2.jpg"
+             class="background-image img-fluid w-100" alt="Background"/>
+    
+        {{-- Countdown --}}
+        <div class="countdown-timer d-flex position-absolute text-white text-center fw-bold">
+            <div>
+                <div class="fs-2">00</div>
+                <div class="fs-6 fw-normal tracking">HARI</div>
+            </div>
+            <div>
+                <div class="fs-2">00</div>
+                <div class="fs-6 fw-normal tracking">JAM</div>
+            </div>
+            <div>
+                <div class="fs-2">00</div>
+                <div class="fs-6 fw-normal tracking">MENIT</div>
+            </div>
+            <div>
+                <div class="fs-2">00</div>
+                <div class="fs-6 fw-normal tracking">DETIK</div>
+            </div>
+        </div>
+    
+        {{-- Foreground portrait --}}
+        <div class="portrait-image shadow position-absolute">
+            <img src="https://storage.googleapis.com/a1aa/image/cc25c30b-4d0d-465c-73f5-084b7d9bfb9e.jpg"
+                 class="img-fluid" alt="Portrait"/>
+        </div>
+    
+        {{-- Date text --}}
+        <div class="countdown-date text-white position-absolute">15 Desember 2024</div>
+    
+    </div>
+
 <div class="d-flex justify-content-center align-items-center w-100 h-100">
     <div class="centered-content">
         <!-- Main Title -->
