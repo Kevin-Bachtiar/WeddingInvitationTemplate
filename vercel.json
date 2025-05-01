@@ -5,7 +5,7 @@
         "src": "vite.config.js",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "public",
+          "distDir": "public",  
           "buildCommand": "npm run build"
         }
       }
@@ -13,13 +13,8 @@
     "routes": [
       {
         "src": "/build/assets/(.*)",
-        "headers": {
-          "Cache-Control": "public, max-age=31536000, immutable"
-        }
+        "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
       },
-      {
-        "src": "/(.*)",
-        "dest": "/public/$1"
-      }
+      { "src": "/(.*)", "dest": "/public/$1" }
     ]
   }
