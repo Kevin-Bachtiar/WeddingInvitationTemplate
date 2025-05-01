@@ -1,3 +1,132 @@
+.welcome {
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #e0f7ff, #f0faff); // Cold gradient
+    color: #224066;
+
+    .title {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5rem;
+        color: #1976d2; // Deep blue
+        margin-bottom: 0.5rem;
+        animation: slideInDown 1s ease forwards;
+        text-shadow: 0 0 10px rgba(25, 118, 210, 0.3);
+    }
+
+    .names {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.8rem;
+        color: #2196f3;
+        animation: slideInUp 1.2s ease forwards;
+        text-shadow: 0 0 8px rgba(33, 150, 243, 0.2);
+    }
+
+    .wedding-image {
+        margin: 2rem 0;
+        img {
+            max-height: 320px;
+            max-width: 320px;
+            object-fit: cover;
+            border-radius: 1rem;
+            animation: glowIn 2s ease forwards;
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.2);
+        }
+    }
+
+    .invitation-text {
+        font-size: 1.2rem;
+        color: #1e3a5f;
+        animation: fadeIn 2s ease forwards;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        backdrop-filter: blur(4px);
+    }
+
+    a.btn {
+        background-color: #2196f3;
+        border: none;
+        transition: all 0.4s ease;
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        &:hover {
+            background-color: #1565c0;
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(21, 101, 192, 0.5);
+        }
+    }
+
+    // Animations
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .fade-in-delay {
+        opacity: 0;
+        animation: fadeIn 1.2s ease forwards;
+    }
+
+    .fade-in-delay-2 {
+        opacity: 0;
+        animation: fadeIn 1.4s ease forwards;
+    }
+
+    .fade-in-delay-3 {
+        opacity: 0;
+        animation: fadeIn 1.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInUp {
+        from {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-40px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes glowIn {
+        from {
+            transform: scale(0.95);
+            opacity: 0;
+            box-shadow: none;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 10px 25px rgba(33, 150, 243, 0.3);
+        }
+    }
+}
+
+
+
 .centered-content {
     display: flex;
     flex-direction: column;
